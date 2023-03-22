@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeSomeone Quiz</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <style>
+        body{
+            background-color: aliceblue;
+            position: relative;
+        }
+
+        section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 70vh;
+            
+        }
+
+        #quiz {
+        background-color: #45a49d;
+        width: 80%;
+        height: 325px;
+        }
+
+
+        ul {background-color: #45a49d;}
+        li:hover {background-color: #f8be45;}
+    </style>
+
+  
+    
+
+</head>
+
+<body onload="selectQuestion()">
+
+
+<section>
+    
+
+    <div id="quiz" class="card hide" >
+    <div class="question card-body">
+        <h3 id="cardTitle" class="card-title"></h3>
+        <h5 id="currentNumber"></h5>
+        </div>
+        <div class="responses card">
+            <form >
+                <ul id="responseBtns" class="list-group list-group-flush ">
+                    <li  id="response1" onclick="push1()" class="response list-group-item">Disagree 👎</li>
+                    <li id="response2" onclick="push2()" class="response list-group-item">Slightly Disagree 😒</li>
+                    <li id="response3" onclick="push3()" class="response list-group-item">Neutral 🤷</li>
+                    <li id="response4" onclick="push4()" class="response list-group-item">Slightly Agree 🤔</li>
+                    <li id="response5" onclick="push5()" class="response list-group-item">Agree 👍</li>
+                </ul>
+            </form>
+        </div>
+    </div>
+
+</section>
+
+    
+
+<script>
+
+    var randomQuestions, currentQuestionIndex
+   
+    currentQuestionIndex = 0
+
+    var response1 = document.getElementById("response1")
+    var response2 = document.getElementById("response2")
+    var response3 = document.getElementById("response3")
+    var response4 = document.getElementById("response4")
+    var response5 = document.getElementById("response5")
+    
+    
+    push1 = () => {
+        // console.log("1")
+        selectQuestion()
+    }
+    push2 = () => {
+        // console.log("2")
+        selectQuestion()
+    }
+    push3 = () => {
+        // console.log("3")
+        selectQuestion()
+    }
+    push4 = () => {
+        // console.log("4")
+        selectQuestion()
+    }
+    push5 = () => {
+        // console.log("5")
+        selectQuestion()
+    }
+    
+
+    
+      
+    function selectQuestion(){
+      
+        
+     const cardTitle = document.getElementById("cardTitle")
+     const currentNumber = document.getElementById("currentNumber")
+     
+
+     
+      let questionsArray = [
+        ["I keep a healthy daily routine", 1],
+        ["Failure is a springboard for growth", 1],
+        ["I generally know the next step to take", 1],
+        ["I like reflecting on my day", 1],
+        ["I can calm myself down if I find myself getting frustrated/angry", 1],
+        ["My friends come to me for my judgement calls", 1],
+        ["I have no problem acting confident", 1],
+        ["I am aware of the things I should be grateful for", 1],
+        ["I am curious about how everything works", 1],
+        ["I like individual sports like track, swimming, etc.", 1], 
+        ["I am an empathetic person", 2],
+        ["Obstacles rarely get me down", 2],
+        ["I can rely on my peers to support me", 2],
+        ["I am able to resolve conflicts well", 2],
+        ["I like team sports like baseball/softball, basketball, etc.", 2],
+        ["Working in a team is easy for me", 2],
+        ["I like to volunteer", 2],
+        ["I have business ideas I'd like to work on/have started to work on", 2],
+        ["I have organized a volunteering event", 2],
+        ["Life is to be enjoyed", 2],
+        ["At one point, I loved reading", 3],
+        ["I rarely make spelling mistakes", 3],
+        ["I rarely make grammatical mistakes", 3],
+        ["I regularly add new words to my repertoire", 3],
+        ["Typing quickly is a strength of mine", 3],
+        ["Nonfiction writing (reports, essays) come easy to me", 3],
+        ["Fiction/creative writing comes easy to me", 3],
+        ["I can write thoughtful feedback that is taken well", 3],
+        ["Presenting in front of an audience is not intimidating to me", 3],
+        ["In a conversation, I respond in a way that makes the other person feel heard", 3],
+        ["I can speak more than one language", 3],
+       
+      ]
+
+
+      var displayQuestion = (questionsArray[currentQuestionIndex][0])
+      console.log("current index", currentQuestionIndex, questionsArray.length)
+      currentQuestionIndex++
+      if(questionsArray.length === currentQuestionIndex ){
+        finished()
+      }
+      
+      cardTitle.innerHTML = displayQuestion
+
+      currentNumber.innerHTML = currentQuestionIndex+"/"+questionsArray.length
+    } 
+
+    finished = () => {
+        console.log("finished")
+    }  
+      
+
+    </script>
+</body>
+</html>
