@@ -79,37 +79,21 @@
     var response5 = document.getElementById("response5")
     
     
-    push1 = () => {
-        // console.log("1")
-        selectQuestion()
-    }
-    push2 = () => {
-        // console.log("2")
-        selectQuestion()
-    }
-    push3 = () => {
-        // console.log("3")
-        selectQuestion()
-    }
-    push4 = () => {
-        // console.log("4")
-        selectQuestion()
-    }
-    push5 = () => {
-        // console.log("5")
-        selectQuestion()
-    }
-    
+   
+    let mindfulSelf = []
+    let servantLeader = []
+    let compellingCommunicator = []
 
     
       
     function selectQuestion(){
       
         
+        
      const cardTitle = document.getElementById("cardTitle")
      const currentNumber = document.getElementById("currentNumber")
      
-
+   
      
       let questionsArray = [
         ["I keep a healthy daily routine", 1],
@@ -148,7 +132,9 @@
 
 
       var displayQuestion = (questionsArray[currentQuestionIndex][0])
-      console.log("current index", currentQuestionIndex, questionsArray.length)
+      var displayQuestionCategory = (questionsArray[currentQuestionIndex][1])
+      console.log(displayQuestion, displayQuestionCategory)
+
       currentQuestionIndex++
       if(questionsArray.length === currentQuestionIndex ){
         finished()
@@ -157,10 +143,46 @@
       cardTitle.innerHTML = displayQuestion
 
       currentNumber.innerHTML = currentQuestionIndex+"/"+questionsArray.length
+
+        push1 = () => {
+        // console.log("1")
+        if(displayQuestionCategory === 1){
+            mindfulSelf.push(1)
+        }
+        console.log(mindfulSelf)
+        selectQuestion()
+        }
+        push2 = () => {
+        // console.log("2")
+        selectQuestion()
+        }
+        push3 = () => {
+        // console.log("3")
+        selectQuestion()
+        }
+        push4 = () => {
+        // console.log("4")
+        selectQuestion()
+        }
+        push5 = () => {
+        // console.log("5")
+        selectQuestion()
+        }
+
+
+
+
+
     } 
 
     finished = () => {
         console.log("finished")
+        let mindfulSum = 0
+        for(let i = 0; i < mindfulSelf.length; i += 1){
+            mindfulSum += mindfulSelf[i]
+        }
+        console.log("mindful self =", mindfulSum)
+        return mindfulSum
     }  
       
 
