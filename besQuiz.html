@@ -25,7 +25,7 @@
         #quiz {
         background-color: #45a49d;
         width: 80%;
-        height: 325px;
+        height: 425px;
         }
 
 
@@ -47,12 +47,13 @@
     <div id="quiz" class="card hide" >
     <div class="question card-body">
         <h3 id="cardTitle" class="card-title"></h3>
-        <h5 id="currentNumber"></h5>
+        
         </div>
         <div class="responses card">
             <form >
                 <ul id="responseBtns" class="list-group list-group-flush ">
-                    <li  id="response1" onclick="push1()" class="response list-group-item">Disagree 👎</li>
+                    <h5 id="currentNumber"></h5>
+                    <li id="response1" onclick="push1()" class="response list-group-item">Disagree 👎</li>
                     <li id="response2" onclick="push2()" class="response list-group-item">Slightly Disagree 😒</li>
                     <li id="response3" onclick="push3()" class="response list-group-item">Neutral 🤷</li>
                     <li id="response4" onclick="push4()" class="response list-group-item">Slightly Agree 🤔</li>
@@ -83,6 +84,8 @@
     let mindfulSelf = []
     let servantLeader = []
     let compellingCommunicator = []
+    let criticalThinker = []
+    let creativeMaker = []
 
     
       
@@ -127,13 +130,29 @@
         ["Presenting in front of an audience is not intimidating to me", 3],
         ["In a conversation, I respond in a way that makes the other person feel heard", 3],
         ["I can speak more than one language", 3],
+        ["I'm good at math", 4],
+        ["I'm a logical person", 4],
+        ["I find it easy to understand what writer's are trying to say", 4],
+        ["Asking clarifying questions to understand the big picture comes naturally", 4],
+        ["I like to play strategy games and puzzles", 4],
+        ["I like to examine every possible outcome before coming to a decision", 4],
+        ["I find art beautiful and thought-provoking", 5],
+        ["I like cooking", 5],
+        ["I like to make/listen to music", 5],
+        ["I like to attend/perform theater", 5],
+        ["Making videos is fun", 5],
+        ["I enjoy working with my hands", 5],
+        ["Graphic design is one of my passions", 5],
+        ["I like to understand how every components work with each other", 5],
+        
+
        
       ]
 
 
       var displayQuestion = (questionsArray[currentQuestionIndex][0])
       var displayQuestionCategory = (questionsArray[currentQuestionIndex][1])
-      console.log(displayQuestion, displayQuestionCategory)
+    //   console.log(displayQuestion, displayQuestionCategory)
 
       currentQuestionIndex++
       if(questionsArray.length === currentQuestionIndex ){
@@ -148,24 +167,112 @@
         // console.log("1")
         if(displayQuestionCategory === 1){
             mindfulSelf.push(1)
+            console.log("mindful self", mindfulSelf)
+        }else if(displayQuestionCategory === 2){
+            servantLeader.push(1)
+            console.log("servant leader", servantLeader)
+        }else if(displayQuestionCategory === 3){
+            compellingCommunicator.push(1)
+            console.log("compelling communicator", compellingCommunicator)
         }
-        console.log(mindfulSelf)
+        else if (displayQuestionCategory === 4){
+            criticalThinker.push(1)
+            console.log("critical thinker", criticalThinker)
+        }
+        else if (displayQuestionCategory === 5){
+            creativeMaker.push(1)
+            console.log("creative maker", creativeMaker)
+        }
         selectQuestion()
         }
+
         push2 = () => {
         // console.log("2")
+        if(displayQuestionCategory === 1){
+            mindfulSelf.push(2)
+            console.log("mindful self", mindfulSelf)
+        }else if(displayQuestionCategory === 2){
+            servantLeader.push(2)
+            console.log("servant leader", servantLeader)
+        }else if(displayQuestionCategory === 3){
+            compellingCommunicator.push(2)
+            console.log("compelling communicator", compellingCommunicator)
+        } else if (displayQuestionCategory === 4){
+            criticalThinker.push(2)
+            console.log("critical thinker", criticalThinker)
+        }
+        else if (displayQuestionCategory === 5){
+            creativeMaker.push(2)
+            console.log("creative maker", creativeMaker)
+        }
         selectQuestion()
         }
+
         push3 = () => {
         // console.log("3")
+        if(displayQuestionCategory === 1){
+            mindfulSelf.push(3)
+            console.log("mindful self", mindfulSelf)
+        }else if(displayQuestionCategory === 2){
+            servantLeader.push(3)
+            console.log("servant leader", servantLeader)
+        }else if(displayQuestionCategory === 3){
+            compellingCommunicator.push(3)
+            console.log("compelling communicator", compellingCommunicator)
+        } else if (displayQuestionCategory === 4){
+            criticalThinker.push(3)
+            console.log("critical thinker", criticalThinker)
+        }
+        else if (displayQuestionCategory === 5){
+            creativeMaker.push(3)
+            console.log("creative maker", creativeMaker)
+        }
         selectQuestion()
+
         }
         push4 = () => {
         // console.log("4")
+        if(displayQuestionCategory === 1){
+            mindfulSelf.push(4)
+            console.log("mindful self", mindfulSelf)
+        }else if(displayQuestionCategory === 2){
+            servantLeader.push(4)
+            console.log("servant leader", servantLeader)
+        }else if(displayQuestionCategory === 3){
+            compellingCommunicator.push(4)
+            console.log("compelling communicator", compellingCommunicator)
+        } else if (displayQuestionCategory === 4){
+            criticalThinker.push(4)
+            console.log("critical thinker", criticalThinker)
+        }
+        else if (displayQuestionCategory === 5){
+            creativeMaker.push(4)
+            console.log("creative maker", creativeMaker)
+        }
         selectQuestion()
         }
+
         push5 = () => {
         // console.log("5")
+       
+        // console.log("4")
+        if(displayQuestionCategory === 1){
+            mindfulSelf.push(5)
+            console.log("mindful self", mindfulSelf)
+        }else if(displayQuestionCategory === 2){
+            servantLeader.push(5)
+            console.log("servant leader", servantLeader)
+        }else if(displayQuestionCategory === 3){
+            compellingCommunicator.push(5)
+            console.log("compelling communicator", compellingCommunicator)
+        } else if (displayQuestionCategory === 4){
+            criticalThinker.push(5)
+            console.log("critical thinker", criticalThinker)
+        }
+        else if (displayQuestionCategory === 5){
+            creativeMaker.push(5)
+            console.log("creative maker", creativeMaker)
+        }
         selectQuestion()
         }
 
@@ -177,13 +284,46 @@
 
     finished = () => {
         console.log("finished")
+
         let mindfulSum = 0
+        let servantSum = 0
+        let communicatorSum = 0
+        let criticalSum = 0
+        let creativeSum = 0
+
+
+
         for(let i = 0; i < mindfulSelf.length; i += 1){
             mindfulSum += mindfulSelf[i]
         }
         console.log("mindful self =", mindfulSum)
-        return mindfulSum
+        
+        for(let i = 0; i < servantLeader.length; i += 1){
+            servantSum += servantLeader[i]
+        }
+        console.log("servant leader =", servantSum)
+
+        for(let i = 0; i < compellingCommunicator.length; i += 1){
+            communicatorSum += compellingCommunicator[i]
+        }
+        console.log("compelling communicator =", communicatorSum)
+
+        for(let i = 0; i < criticalThinker.length; i += 1){
+            criticalSum += criticalThinker[i]
+        }
+        console.log("critical thinker =", criticalSum)
+
+        for(let i = 0; i < creativeMaker.length; i += 1){
+            creativeSum += creativeMaker[i]
+        } 
+        console.log("creative maker =", creativeSum)
+
+
+       
+
     }  
+
+   
       
 
     </script>
