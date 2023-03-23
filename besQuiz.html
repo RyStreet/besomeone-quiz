@@ -50,9 +50,22 @@
             
         }
 
-        /* #mindfulBar{
-            --size: {mindfulScale}
-        } */
+        #mindfulBar{
+            --size: var(--mindfulScale)
+        }
+        #servantBar{
+            --size: var(--servantScale)
+        }
+        #communicatorBar{
+            --size: var(--communicatorScale)
+        }
+        #thinkerBar{
+            --size: var(--criticalScale)
+        }
+        #creativeBar{
+            --size: var(--creativeScale)
+        }
+
 
        
 
@@ -118,27 +131,27 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="--size: .20">
+                        <td id="servantBar">
                             <th scope="row">Servant<br> Leader</th>
 
                         </td>
                     </tr>
                     <tr>
                         
-                        <td style="--size: .20">
+                        <td id="communicatorBar">
                             <th scope="row">Compelling<br> Communicator</th>
                             
 
                         </td>
                     </tr>
                     <tr>
-                        <td style="--size: .20">
+                        <td id="thinkerBar">
                             <th scope="row">Critical <br>Thinker</th>
 
                         </td>
                     </tr>
                     <tr>
-                        <td style="--size: .20">
+                        <td id="creativeBar">
                             <th scope="row">Creative<br> Maker</th>
 
 
@@ -172,6 +185,10 @@
     var response5 = document.getElementById("response5")
 
     var mindfulBar = document.getElementById("mindfulBar")
+    var servantBar = document.getElementById("servantBar")
+    var communicatorBar = document.getElementById("communicatorBar")
+    var thinkerBar = document.getElementById("thinkerBar")
+    var creativeBar = document.getElementById("creativeBar")
     
     
    
@@ -422,11 +439,11 @@
         console.log("creative maker =", creativeSum)
 
 
-       var mindfulScale = mindfulSum *.02
-       var servantScale = servantSum *.02
-       var communicatorScale = communicatorSum * .02
-       var criticalScale = criticalSum * .02
-       var creativeScale = creativeSum * .02
+       var mindfulScale = mindfulSum *.015
+       var servantScale = servantSum *.015
+       var communicatorScale = communicatorSum * .015
+       var criticalScale = criticalSum * .015
+       var creativeScale = creativeSum * .015
 
        console.log("mindfulScale",  mindfulScale)
        console.log("servantScale", servantScale)
@@ -434,6 +451,12 @@
        console.log("criticalScale", criticalScale)
        console.log("creativeScale", creativeScale)
 
+        var compMind = mindfulBar.style.setProperty("--mindfulScale", `${mindfulScale}`)
+        var compServ = servantBar.style.setProperty("--servantScale", `${servantScale}`)
+        var compComm = communicatorBar.style.setProperty("--communicatorScale", `${communicatorScale}`)
+        var compCritical = thinkerBar.style.setProperty("--criticalScale", `${criticalScale}`)
+        var compCreate = creativeBar.style.setProperty("--creativeScale", `${creativeScale}`)
+        // console.log(mindfulBar.getComputedProperty("scale"))
        
 
        resultsBody.classList.remove("hide")
