@@ -11,6 +11,8 @@
         body{
             background-color: aliceblue;
             position: relative;
+            height: 100%;
+            /* display: flex; */
         }
 
         section{
@@ -18,7 +20,8 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            height: 70vh;
+            
+            
             
         }
 
@@ -26,6 +29,7 @@
         background-color: #45a49d;
         width: 70%;
         height: 425px;
+        margin-top: 50px;
         }
 
         #title{
@@ -33,6 +37,8 @@
             height: 50px;
             display: flex;
             justify-content: center;
+            border: solid black;
+            margin-bottom: 5px;
             
             
         }
@@ -45,15 +51,10 @@
         background-color: aliceblue;
         width: 400px;
         height: 450px;
+        margin-top: 10px;
         }
 
-       @media screen and (max-width: 400px ) {
-        .quizResults {
-        background-color: aliceblue;
-        width: 95%;
-        height: 450px;
-        }
-       }
+       
 
         #resultsChart{
             --labels-size: 100px;
@@ -88,10 +89,10 @@
         margin-top: 8px;
        }
 
-       @media screen and (max-width: 350px) {
+       @media screen and (max-width: 400px) {
         img{
-            height: 65px;
-            width: 45px;
+            height: 75px;
+            width: 55px;
         }
         
        }
@@ -117,13 +118,23 @@
         }
 
         #bestTalent{
-            width: 80%;
+            margin-top: 20px;
+            width: 400px;
             display: flex;
             text-align: center;
+            justify-content: center;
+            height: 350px;
+        }
+
+        #endScreen{
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+         width: 100%;
         }
 
         .skillLists{
-            display: inline;
+            /* display: inline; */
             margin: 5px;
         }
 
@@ -142,6 +153,31 @@
             15% { transform: translateY( 0 ); }
 }
 
+@media screen and (max-width: 400px ) {
+        .quizResults {
+        background-color: aliceblue;
+        width: 100%;
+        height: 450px;
+        margin-top: 10px;
+        }
+        #bestTalent{
+            width: 100%;
+        }
+      
+       }
+
+
+
+
+#skillSetList{
+    background-color: white;
+    /* width: 100%; */
+    padding: 0px;
+}
+    
+
+
+
 
     </style>
 
@@ -156,9 +192,9 @@
 <section>
     
 
-    <div id="quiz" class="quiz card  " >
+    <div id="quiz" class="quiz card   " >
     <div class="question card-body ">
-        <h3 id="cardTitle" class="card-title"></h3>
+        <h3 id="cardTitle" class="card-title "></h3>
         
         </div>
         <h5 id="currentNumber"></h5>
@@ -175,8 +211,10 @@
             </form>
         </div>
     </div>
+</section>
 
-    <div id="results" class="card quizResults hide ">
+<section id="endScreen" class="hide">
+    <div id="results" class="card quizResults  ">
         <div id="title">
         <h3 id="titleChars">Results</h3>
         </div>
@@ -238,21 +276,29 @@
     
     </div>
 
-    <!-- <div class="card" id="bestTalent">
+    
+    <div class="card" id="bestTalent">
         <div class="card-title" id="bestTitle">
             <h2>Congrats!<br> Your best Talent is:</h2>
-            <h1>Talent</h1>
+            <img id="skillImage">
         </div>
-        <div  style="display: inline;">
+        <div  >
             <h4>Some of your Skills include:</h4>
-                <li class="skillLists">Skill 1</li>
-                <li class="skillLists">Skill 2</li>
-                <li class="skillLists">Skill 3</li>
-
+            <ul id="skillSetList">
+                <p id="skill1" class="skillLists">Growth Mindset</p>
+                <p id="skill2" class="skillLists">Self  Direction</p>
+                <p id="skill3" class="skillLists">Curiousity + Imagination</p>
+            </ul>
 
             
         </div>
-    </div> -->
+        
+
+    </div>
+
+    <!-- <button class="btn btn-outline-primary m-1">Save Score</button> -->
+    <!-- <button id="quizAgain" class="btn btn-outline-warning m-1" onclick="window.reload()">Quiz Again</button> -->
+
 
 </section>
 
@@ -260,12 +306,14 @@
 
 <script>
 
+
+
     var randomQuestions, currentQuestionIndex
    
     currentQuestionIndex = 0
 
     var quizBody = document.getElementById("quiz")
-    var resultsBody = document.getElementById("results")
+    var resultsBody = document.getElementById("endScreen")
 
     var response1 = document.getElementById("response1")
     var response2 = document.getElementById("response2")
@@ -287,10 +335,11 @@
     let criticalThinker = []
     let creativeMaker = []
 
-    
-      
+          
     function selectQuestion() { 
-      
+        
+        quizBody.classList.remove("hide")
+        resultsBody.classList.add("hide")
         
         
      const cardTitle = document.getElementById("cardTitle")
@@ -488,6 +537,18 @@
 
     } 
 
+    const skillImage = document.getElementById("skillImage")
+    var mindfulLogo = "https://static.wixstatic.com/media/ed8077_567d086c468e4ef59f15b009256db246~mv2.png/v1/fill/w_142,h_213,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ed8077_567d086c468e4ef59f15b009256db246~mv2.png"
+    var servantLogo = "https://static.wixstatic.com/media/ed8077_8c2662b39549417e8bdc68716de0ae48~mv2.png/v1/fill/w_128,h_211,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ed8077_8c2662b39549417e8bdc68716de0ae48~mv2.png"
+    var communicatorLogo = "https://static.wixstatic.com/media/ed8077_a6b5ad5df69c484e8bb55b96f1f1ed9d~mv2.png/v1/fill/w_145,h_210,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ed8077_a6b5ad5df69c484e8bb55b96f1f1ed9d~mv2.png"
+    var thinkerLogo = "https://static.wixstatic.com/media/ed8077_bcfe7c3663744173a9adc754a5bfa86c~mv2.png/v1/fill/w_141,h_186,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ed8077_bcfe7c3663744173a9adc754a5bfa86c~mv2.png"
+    var creativeLogo = "https://static.wixstatic.com/media/ed8077_6d8c44a196e2484c97d94f80a57da6d4~mv2.png/v1/fill/w_140,h_219,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ed8077_6d8c44a196e2484c97d94f80a57da6d4~mv2.png"
+    
+    var skill1 = document.getElementById("skill1")
+    var skill2 = document.getElementById("skill2")
+    var skill3 = document.getElementById("skill3")
+
+
     finished = () => {
         console.log("finished")
 
@@ -534,11 +595,11 @@
        var criticalScale = criticalSum * .02
        var creativeScale = creativeSum * .02
 
-       console.log("mindfulScale",  mindfulScale)
-       console.log("servantScale", servantScale)
-       console.log("communicatorScale", communicatorScale)
-       console.log("criticalScale", criticalScale)
-       console.log("creativeScale", creativeScale)
+    //    console.log("mindfulScale",  mindfulScale)
+    //    console.log("servantScale", servantScale)
+    //    console.log("communicatorScale", communicatorScale)
+    //    console.log("criticalScale", criticalScale)
+    //    console.log("creativeScale", creativeScale)
 
         var compMind = mindfulBar.style.setProperty("--mindfulScale", `${mindfulScale}`)
         var compServ = servantBar.style.setProperty("--servantScale", `${servantScale}`)
@@ -550,7 +611,57 @@
 
        resultsBody.classList.remove("hide")
 
-       console.log(Math.max(mindfulScale, servantScale, communicatorScale, criticalScale, creativeScale))
+    //    console.log(Math.max(mindfulScale, servantScale, communicatorScale, criticalScale, creativeScale))
+
+       talentScoreArray = [mindfulScale, servantScale, communicatorScale, criticalScale, creativeScale]
+
+       if(mindfulScale >= servantScale && mindfulScale >= communicatorScale && mindfulScale >= criticalScale && mindfulScale >= creativeScale){
+        console.log("mindful")
+        skillImage.src = mindfulLogo
+        skill1.innerHTML = "Growth Mindset"
+        skill2.innerHTML = "Self Direction"
+        skill3.innerHTML = "Curiousity + Imagination"
+
+
+       }
+       if(servantScale >= mindfulScale && servantScale >= communicatorScale && servantScale >= criticalScale && servantScale >= creativeScale){
+        console.log("servant")
+        skillImage.src = servantLogo
+        skill1.innerHTML = "Warm-Hearted"
+        skill2.innerHTML = "Peer Support"
+        skill3.innerHTML = "Entrepreneurship"
+       }
+       if(communicatorScale >= mindfulScale && communicatorScale >= servantScale  && communicatorScale >= criticalScale && communicatorScale >= creativeScale){
+        console.log("comm")
+        skillImage.src = communicatorLogo
+        skill1.innerHTML = "Active Listening"
+        skill2.innerHTML = "Considerate Feedback"
+        skill3.innerHTML = "Curiousity + Imagination"
+       }
+       if(criticalScale >= mindfulScale && criticalScale >= servantScale  && criticalScale >= communicatorScale && criticalScale >= creativeScale){
+        console.log("crit")
+        skillImage.src = thinkerLogo
+        skill1.innerHTML = "Evidence Evaluation"
+        skill2.innerHTML = "Decision Analysis"
+        skill3.innerHTML = "Agile Approaches"
+       }
+       if(creativeScale >= mindfulScale && creativeScale >= servantScale  && creativeScale >= communicatorScale && creativeScale >= criticalScale){
+        console.log("create")
+        skillImage.src = creativeLogo
+        skill1.innerHTML = "Design Thinking"
+        skill2.innerHTML = "Artistic"
+        skill3.innerHTML = "Digital Design"
+       }
+
+      
+
+
+
+    //    console.log(talentScoreArray)
+    //    console.log(Math.max(...talentScoreArray))
+
+       
+   
 
     }  
 
