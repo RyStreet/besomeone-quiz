@@ -13,6 +13,8 @@
             position: relative;
             height: 100%;
             /* display: flex; */
+            background-image: url(https://static.wixstatic.com/media/75d0c4_9d64de838fcf40a8bbf6365ccc3c27e5~mv2.png/v1/fill/w_741,h_741,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/quiz-background.png);
+            background-size: 100%;
         }
 
         section{
@@ -27,9 +29,10 @@
 
         .quiz {
         background-color: #45a49d;
-        width: 70%;
+        width: 60%;
         height: 425px;
         margin-top: 50px;
+        
         }
 
         #title{
@@ -81,18 +84,23 @@
             --size: var(--creativeScale)
         }
 
-    
+        #skillImg{
+        height: 115px;
+        width: 95px;
+       }
 
-       img{
-        height: 85px;
-        width: 65px;
+       .img{
+        height: 95px;
+        width: 75px;
         margin-top: 8px;
        }
 
+      
+
        @media screen and (max-width: 400px) {
-        img{
-            height: 75px;
-            width: 55px;
+        .img{
+            height: 85px;
+            width: 65px;
         }
         
        }
@@ -123,7 +131,7 @@
             display: flex;
             text-align: center;
             justify-content: center;
-            height: 350px;
+            height: 50%;
         }
 
         #endScreen{
@@ -137,6 +145,16 @@
             /* display: inline; */
             margin: 5px;
         }
+
+        #quizImg{
+    margin-top: 10px;
+   text-align: center;
+   /* font-family: "Lexend Regular"; */
+   font-style: "bold";
+   width: 300px
+   
+   
+}
 
         #resultsChart tbody {
          overflow-y: hidden; /* remove this to see how it works */
@@ -163,6 +181,15 @@
         #bestTalent{
             width: 100%;
         }
+        .quiz{
+            width: 80%;
+        }
+        #quizImg{
+            width: 200px;
+        }
+        body{
+            background-image: url(https://static.wixstatic.com/media/75d0c4_48fe629d7cc9456cb6f24747d8c8f2b3~mv2.png/v1/fill/w_540,h_960,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/quizmobilbg.png);
+        }
       
        }
 
@@ -174,7 +201,9 @@
     /* width: 100%; */
     padding: 0px;
 }
-    
+
+
+
 
 
 
@@ -191,8 +220,12 @@
 
 <section>
     
+    
+    <!-- <img id="quizImg" src="https://static.wixstatic.com/media/75d0c4_2fb4b3851ae140679f9826fb6fedabe1~mv2.png/v1/fill/w_277,h_494,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Take%20the%20Talents%20Quiz!%20(1).png" alt="Text: Take the Talents Quiz"> -->
+    
 
     <div id="quiz" class="quiz card   " >
+        
     <div class="question card-body ">
         <h3 id="cardTitle" class="card-title "></h3>
         
@@ -211,6 +244,10 @@
             </form>
         </div>
     </div>
+
+
+
+
 </section>
 
 <section id="endScreen" class="hide">
@@ -223,14 +260,14 @@
                 <tbody>
                     <tr> 
                         <th scope="row"> 
-                        <img src="https://static.wixstatic.com/media/ed8077_567d086c468e4ef59f15b009256db246~mv2.png/v1/fill/w_142,h_213,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ed8077_567d086c468e4ef59f15b009256db246~mv2.png">    
+                        <img class="img" src="https://static.wixstatic.com/media/ed8077_567d086c468e4ef59f15b009256db246~mv2.png/v1/fill/w_142,h_213,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ed8077_567d086c468e4ef59f15b009256db246~mv2.png">    
                         </th>
                         <td id="mindfulBar" style="--color: #45a59d " ></td>
         
                     </tr>
                     <tr>
                         <th>
-                            <img src="https://static.wixstatic.com/media/ed8077_8c2662b39549417e8bdc68716de0ae48~mv2.png/v1/fill/w_128,h_211,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ed8077_8c2662b39549417e8bdc68716de0ae48~mv2.png">
+                            <img class="img" src="https://static.wixstatic.com/media/ed8077_8c2662b39549417e8bdc68716de0ae48~mv2.png/v1/fill/w_128,h_211,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ed8077_8c2662b39549417e8bdc68716de0ae48~mv2.png">
                         </th>
                         <td id="servantBar" style="--color: red">
                             
@@ -239,7 +276,7 @@
                     </tr>
                     <tr>
                         <th id="compellingText">
-                            <img src="https://static.wixstatic.com/media/ed8077_a6b5ad5df69c484e8bb55b96f1f1ed9d~mv2.png/v1/fill/w_145,h_210,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ed8077_a6b5ad5df69c484e8bb55b96f1f1ed9d~mv2.png">
+                            <img class="img" src="https://static.wixstatic.com/media/ed8077_a6b5ad5df69c484e8bb55b96f1f1ed9d~mv2.png/v1/fill/w_145,h_210,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ed8077_a6b5ad5df69c484e8bb55b96f1f1ed9d~mv2.png">
                         </th>
                         <td id="communicatorBar" style="--color: #f8be45">
                            
@@ -249,7 +286,7 @@
                     </tr>
                     <tr>
                         <th >
-                            <img src="https://static.wixstatic.com/media/ed8077_bcfe7c3663744173a9adc754a5bfa86c~mv2.png/v1/fill/w_141,h_186,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ed8077_bcfe7c3663744173a9adc754a5bfa86c~mv2.png">
+                            <img class="img" src="https://static.wixstatic.com/media/ed8077_bcfe7c3663744173a9adc754a5bfa86c~mv2.png/v1/fill/w_141,h_186,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ed8077_bcfe7c3663744173a9adc754a5bfa86c~mv2.png">
                         </th>
                         <td id="thinkerBar" style="--color: blue">
                             
@@ -258,7 +295,7 @@
                     </tr>
                     <tr>
                         <th >
-                            <img src="https://static.wixstatic.com/media/ed8077_6d8c44a196e2484c97d94f80a57da6d4~mv2.png/v1/fill/w_140,h_219,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ed8077_6d8c44a196e2484c97d94f80a57da6d4~mv2.png">
+                            <img class="img" src="https://static.wixstatic.com/media/ed8077_6d8c44a196e2484c97d94f80a57da6d4~mv2.png/v1/fill/w_140,h_219,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ed8077_6d8c44a196e2484c97d94f80a57da6d4~mv2.png">
                         </th>
                         
                         <td id="creativeBar" style="--color: purple">
@@ -279,7 +316,7 @@
     
     <div class="card" id="bestTalent">
         <div class="card-title" id="bestTitle">
-            <h2>Congrats!<br> Your best Talent is:</h2>
+            <h2>Congrats!<br> Your Strongest Talent is:</h2>
             <img id="skillImage">
         </div>
         <div  >
@@ -548,11 +585,14 @@
     var skill2 = document.getElementById("skill2")
     var skill3 = document.getElementById("skill3")
 
+    const quizImg = document.getElementById("quizImg")
+
 
     finished = () => {
         console.log("finished")
 
         quizBody.classList.add("hide")
+        // quizImg.classList.add("hide")
         
 
         let mindfulSum = 0
