@@ -92,17 +92,43 @@
 
        .img{
         height: 100px;
-        width: 75px;
+        width: 65px;
         margin-top: 8px;
        }
 
-      
+       #servantTh{
+        height: 105px;
+        width: 63px;
+       }
+
+       #compTh{
+        height: 105px;
+        width: 68px;
+       }
+
+       #critTh{
+            width: 75px;
+        }
 
        @media screen and (max-width: 400px) {
-        .img{
-            /* height: 85px; */
-            width: 65px;
+        .img {
+            height: 70px;
+            width: 45px;
         }
+        #critTh{
+            width: 55px;
+        }
+        
+        #servantTh{
+            height: 73px;
+            width: 44px
+        }
+        #compTh{
+            height: 75px;
+            width: 50px;
+        }
+
+        
         
        }
 
@@ -119,7 +145,7 @@
 
         #resultsChart{
             height: 400px;
-            /* margin-top: 35px; */
+            
             background-color: white
             
         }
@@ -130,7 +156,7 @@
         }
 
         #bestTalent{
-            margin-top: 20px;
+            margin-top: 40px;
             width: 400px;
             display: flex;
             text-align: center;
@@ -148,6 +174,7 @@
         }
 
         #endScreen{
+        margin-top: 25px;
         height: 100%;
         justify-content: center;
         align-items: center;
@@ -240,7 +267,7 @@
     <!-- <img id="quizImg" src="https://static.wixstatic.com/media/75d0c4_2fb4b3851ae140679f9826fb6fedabe1~mv2.png/v1/fill/w_277,h_494,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Take%20the%20Talents%20Quiz!%20(1).png" alt="Text: Take the Talents Quiz"> -->
     
 
-    <div id="quiz" class="quiz card   " >
+    <div id="quiz" class="quiz card " >
         
     <div class="question card-body ">
         <h3 id="cardTitle" class="card-title "></h3>
@@ -259,15 +286,18 @@
                 </ul>
             </form>
         </div>
-
         
-
+        
     </div>
+    
 
     <div class="card   " id="bestTalent2" >
         <h2 class="margin-top: 5px ">Learn More About the Five Talents Below</h2>
         <img src="https://static.wixstatic.com/media/75d0c4_0f5e0608d66f4595ba8b9edf49d25fc7~mv2.jpg/v1/fill/w_540,h_540,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/4418998.jpg">
-
+        <button class="btn btn-primary btn-sm" onclick="loadScore()">Load Previous Score</button>
+        <div>
+        <p class="hide text-center font-weight-bold" id="noScoreText">No Score Yet! <br> Take the Talents Quiz First</p>
+        </div>
     </div>
     
 
@@ -293,7 +323,7 @@
                     </tr>
                     <tr>
                         <th>
-                            <img class="img" src="https://static.wixstatic.com/media/ed8077_8c2662b39549417e8bdc68716de0ae48~mv2.png/v1/fill/w_128,h_211,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ed8077_8c2662b39549417e8bdc68716de0ae48~mv2.png">
+                            <img class="img" id="servantTh" src="https://static.wixstatic.com/media/ed8077_8c2662b39549417e8bdc68716de0ae48~mv2.png/v1/fill/w_128,h_211,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ed8077_8c2662b39549417e8bdc68716de0ae48~mv2.png">
                         </th>
                         <td id="servantBar" style="--color: red">
                             
@@ -302,7 +332,7 @@
                     </tr>
                     <tr>
                         <th id="compellingText">
-                            <img class="img" src="https://static.wixstatic.com/media/ed8077_a6b5ad5df69c484e8bb55b96f1f1ed9d~mv2.png/v1/fill/w_145,h_210,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ed8077_a6b5ad5df69c484e8bb55b96f1f1ed9d~mv2.png">
+                            <img class="img" id="compTh" src="https://static.wixstatic.com/media/ed8077_a6b5ad5df69c484e8bb55b96f1f1ed9d~mv2.png/v1/fill/w_145,h_210,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ed8077_a6b5ad5df69c484e8bb55b96f1f1ed9d~mv2.png">
                         </th>
                         <td id="communicatorBar" style="--color: #f8be45">
                            
@@ -312,7 +342,7 @@
                     </tr>
                     <tr>
                         <th >
-                            <img class="img" src="https://static.wixstatic.com/media/ed8077_bcfe7c3663744173a9adc754a5bfa86c~mv2.png/v1/fill/w_141,h_186,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ed8077_bcfe7c3663744173a9adc754a5bfa86c~mv2.png">
+                            <img class="img" id="critTh" src="https://static.wixstatic.com/media/ed8077_bcfe7c3663744173a9adc754a5bfa86c~mv2.png/v1/fill/w_141,h_186,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ed8077_bcfe7c3663744173a9adc754a5bfa86c~mv2.png">
                         </th>
                         <td id="thinkerBar" style="--color: blue">
                             
@@ -340,7 +370,7 @@
     </div>
 
     
-    <div class="card" id="bestTalent">
+    <div class="card " id="bestTalent">
         <div class="card-title" id="bestTitle">
             <h2>Congrats!<br> Your Strongest Talent is:</h2>
             <img id="skillImage">
@@ -355,6 +385,9 @@
 
             
         </div>
+        <button class="btn btn-success btn-sm"  onclick="location.reload()">Save Score!</button>
+        <br>
+        <button class="btn btn-primary btn-sm"  onclick="localStorage.clear(), location.reload()">Clear Score and Retake Quiz</button>
         
 
     </div>
@@ -378,6 +411,7 @@
     var learnMore = document.getElementById("bestTalent2")
     var quizBody = document.getElementById("quiz")
     var resultsBody = document.getElementById("endScreen")
+    var noScoreText = document.getElementById("noScoreText")
 
     var response1 = document.getElementById("response1")
     var response2 = document.getElementById("response2")
@@ -404,6 +438,8 @@
         
         quizBody.classList.remove("hide")
         resultsBody.classList.add("hide")
+        noScoreText.classList.add("hide")
+
         
         
      const cardTitle = document.getElementById("cardTitle")
@@ -663,6 +699,14 @@
        var criticalScale = criticalSum * .02
        var creativeScale = creativeSum * .02
 
+       localStorage.setItem("mindful", mindfulScale)
+       localStorage.setItem("servant", servantScale)
+       localStorage.setItem("comm", communicatorScale)
+       localStorage.setItem("crit", criticalScale)
+       localStorage.setItem("create", creativeScale)
+
+
+
     //    console.log("mindfulScale",  mindfulScale)
     //    console.log("servantScale", servantScale)
     //    console.log("communicatorScale", communicatorScale)
@@ -728,11 +772,86 @@
     //    console.log(talentScoreArray)
     //    console.log(Math.max(...talentScoreArray))
 
-       
+      
    
 
     }  
 
+    const loadScore = () => {
+
+        var noScoreText = document.getElementById("noScoreText")
+
+       var mindfulScale = localStorage.getItem("mindful")
+       var servantScale = localStorage.getItem("servant")
+       var communicatorScale = localStorage.getItem("comm")
+       var criticalScale = localStorage.getItem("crit")
+       var creativeScale = localStorage.getItem("create")
+
+       if(!mindfulScale){
+        noScoreText.classList.remove("hide")
+       } else{
+
+
+        quizBody.classList.add("hide")
+        learnMore.classList.add("hide")
+        resultsBody.classList.remove("hide")
+
+       
+
+       var compMind = mindfulBar.style.setProperty("--mindfulScale", `${mindfulScale}`)
+        var compServ = servantBar.style.setProperty("--servantScale", `${servantScale}`)
+        var compComm = communicatorBar.style.setProperty("--communicatorScale", `${communicatorScale}`)
+        var compCritical = thinkerBar.style.setProperty("--criticalScale", `${criticalScale}`)
+        var compCreate = creativeBar.style.setProperty("--creativeScale", `${creativeScale}`)
+        // console.log(mindfulBar.getComputedProperty("scale"))
+       
+
+       
+
+    //    console.log(Math.max(mindfulScale, servantScale, communicatorScale, criticalScale, creativeScale))
+
+       talentScoreArray = [mindfulScale, servantScale, communicatorScale, criticalScale, creativeScale]
+
+       if(mindfulScale >= servantScale && mindfulScale >= communicatorScale && mindfulScale >= criticalScale && mindfulScale >= creativeScale){
+        console.log("mindful")
+        skillImage.src = mindfulLogo
+        skill1.innerHTML = "Growth Mindset"
+        skill2.innerHTML = "Self Direction"
+        skill3.innerHTML = "Curiousity + Imagination"
+
+
+       }
+       if(servantScale >= mindfulScale && servantScale >= communicatorScale && servantScale >= criticalScale && servantScale >= creativeScale){
+        console.log("servant")
+        skillImage.src = servantLogo
+        skill1.innerHTML = "Warm-Hearted"
+        skill2.innerHTML = "Peer Support"
+        skill3.innerHTML = "Entrepreneurship"
+       }
+       if(communicatorScale >= mindfulScale && communicatorScale >= servantScale  && communicatorScale >= criticalScale && communicatorScale >= creativeScale){
+        console.log("comm")
+        skillImage.src = communicatorLogo
+        skill1.innerHTML = "Active Listening"
+        skill2.innerHTML = "Considerate Feedback"
+        skill3.innerHTML = "Curiousity + Imagination"
+       }
+       if(criticalScale >= mindfulScale && criticalScale >= servantScale  && criticalScale >= communicatorScale && criticalScale >= creativeScale){
+        console.log("crit")
+        skillImage.src = thinkerLogo
+        skill1.innerHTML = "Evidence Evaluation"
+        skill2.innerHTML = "Decision Analysis"
+        skill3.innerHTML = "Agile Approaches"
+       }
+       if(creativeScale >= mindfulScale && creativeScale >= servantScale  && creativeScale >= communicatorScale && creativeScale >= criticalScale){
+        console.log("create")
+        skillImage.src = creativeLogo
+        skill1.innerHTML = "Design Thinking"
+        skill2.innerHTML = "Artistic"
+        skill3.innerHTML = "Digital Design"
+       }
+        }
+
+    }
 
    
       
