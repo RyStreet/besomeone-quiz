@@ -258,7 +258,7 @@
 
 </head>
 
-<body onload="selectQuestion()">
+<body onload="initialize()">
 
 
 <section>
@@ -369,7 +369,7 @@
     
     </div>
     <br>
-    <button class="btn btn-primary btn-sm"  onclick="localStorage.clear(), location.reload()">Clear Score and Retake Quiz</button>
+    <button class="btn btn-primary btn-sm"  onclick="clearScore()">Clear Score and Retake Quiz</button>
     <div class="card " id="bestTalent">
         <div class="card-title" id="bestTitle">
             <h2>Congrats!<br> Your Strongest Talent is:</h2>
@@ -438,21 +438,31 @@
 
     let mindfulStorage = .2 
 
+    const initialize = () => {
+
+    try{
+        loadScore()
+    }catch(e){
+        console.log("oops")
+        selectQuestion()
+    }
+    }
+
     window.onerror = () => {
         console.log("window error")
         
     }
 
-    var localMind =localStorage.getItem("mindful")
+    
 
   
 
           
     function selectQuestion() { 
 
-        if(localMind >= mindfulStorage){
-        loadScore()
-        }else{
+        // if(localMind >= mindfulStorage){
+        // loadScore()
+        // }else{
         
     
         
@@ -656,7 +666,7 @@
 
     
     }
-    } 
+    // }
 
     const skillImage = document.getElementById("skillImage")
     var mindfulLogo = "https://static.wixstatic.com/media/ed8077_567d086c468e4ef59f15b009256db246~mv2.png/v1/fill/w_142,h_213,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ed8077_567d086c468e4ef59f15b009256db246~mv2.png"
@@ -830,7 +840,7 @@
        var creativeScale = localStorage.getItem("create")
 
        if(!mindfulScale){
-        noScoreText.classList.remove("hide")
+        selectQuestion()
        } else{
 
 
@@ -895,6 +905,14 @@
 
     }
 
+    const clearScore = () => {
+        try{
+            localStorage.clear()
+            location.reload()
+        }catch(e){
+            location.reload()
+        }
+    }
    
       
 
