@@ -566,7 +566,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         push1 = () => {
         // console.log("1")
 
-        dataLayer.push({"event": "button1-quiz"})
+        window.dataLayer.push({"event": "button1-quiz"})
 
         if(displayQuestionCategory === 1){
             mindfulSelf.push(1)
@@ -592,7 +592,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         push2 = () => {
         // console.log("2")
 
-        dataLayer.push({"event": "button2-quiz"})
+        window.dataLayer.push({"event": "button2-quiz"})
 
         if(displayQuestionCategory === 1){
             mindfulSelf.push(2)
@@ -615,7 +615,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }
 
         push3 = () => {
-            dataLayer.push({"event": "button3-quiz"})
+            window.dataLayer.push({"event": "button3-quiz"})
         // console.log("3")
         if(displayQuestionCategory === 1){
             mindfulSelf.push(3)
@@ -639,7 +639,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }
         push4 = () => {
         
-            dataLayer.push({"event": "button4-quiz"})
+            window.dataLayer.push({"event": "button4-quiz"})
         // console.log("4")
         if(displayQuestionCategory === 1){
             mindfulSelf.push(4)
@@ -663,7 +663,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         push5 = () => {
         // console.log("5")
-        dataLayer.push({"event": "button5-quiz"})
+        window.dataLayer.push({"event": "button5-quiz"})
         // console.log("4")
         if(displayQuestionCategory === 1){
             mindfulSelf.push(5)
@@ -707,7 +707,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
    const  finished = () => {
         console.log("finished")
-        dataLayer.push({"event": "quiz-completed"})
+        window.dataLayer.push({"event": "quiz-completed"})
         quizBody.classList.add("hide")
         learnMore.classList.add("hide")
         // quizImg.classList.add("hide")
